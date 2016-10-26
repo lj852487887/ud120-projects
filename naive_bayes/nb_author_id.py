@@ -12,6 +12,7 @@
     
 import sys
 from time import time
+from sklearn.naive_bayes import GaussianNB
 sys.path.append("../tools/")
 from email_preprocess import preprocess
 
@@ -26,7 +27,13 @@ features_train, features_test, labels_train, labels_test = preprocess()
 
 #########################################################
 ### your code goes here ###
-
+t0 = time()
+clf = GaussianNB()
+clf.fit(features_train,labels_train)
+print "training time:",round(time()-t0,3),"s"
+t0 = time()
+print clf.predict(features_test)
+print "testing time:",round(time()-t0,3),"s"
 
 #########################################################
 
