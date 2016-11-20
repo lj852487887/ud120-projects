@@ -32,9 +32,20 @@ plt.show()
 ### visualization code (prettyPicture) to show you the decision boundary
 
 
+from sklearn.neighbors import KNeighborsClassifier
+#clf = KNeighborsClassifier()
 
 
+from sklearn.ensemble import AdaBoostClassifier
+clf = AdaBoostClassifier()
 
+
+from sklearn.ensemble import RandomForestClassifier
+#clf = RandomForestClassifier()
+
+
+clf.fit(features_train, labels_train)
+print clf.score(features_test,labels_test)
 
 
 
